@@ -22,18 +22,18 @@ $shiftLogsQuery = "
         sl.log_id, 
         d.name AS driver_name, 
         sl.bus_id, 
-        sl.shift_date, 
+        DATE_FORMAT(sl.shift_date, '%M %d, %Y') AS formatted_date, 
         sl.status, 
-        sl.route, 
         d.image AS driver_image
     FROM 
-        shiftlogs sl
+        shift_logs sl
     JOIN 
         drivers d ON sl.driver_id = d.driver_id
     ORDER BY 
         sl.shift_date DESC
     LIMIT 5
 ";
+
 $shiftLogsResult = $conn->query($shiftLogsQuery);
 $shiftLogs = [];
 
