@@ -252,23 +252,27 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <h2 class="card-title">Shift Logs</h2>
             <div class="card-text">
                 <ul class="shift-logs">
-                    <?php if (!empty($shiftLogs)): ?>
-                        <?php foreach ($shiftLogs as $log): ?>
-                            <li>
-                                <img src="<?php echo htmlspecialchars($log['driver_image']); ?>" alt="Profile Icon" class="profile-icon">
-                                <div class="log-details">
-                                    <div>Driver: <?php echo htmlspecialchars($log['driver_name']); ?></div>
-                                    <div>Date: <?php echo htmlspecialchars($log['formatted_date']); ?></div>
-                                    <div>
-                                        <?php if ($log['status'] === 'Time In'): ?>
-                                            Shift date & Time: <?php echo htmlspecialchars($log['formatted_date']); ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div>Bus #: <?php echo htmlspecialchars($log['bus_id']); ?></div>
-                                    <div>Route: <?php echo htmlspecialchars($log['route']); ?></div>
-                                </div>
-                            </li>
-                        <?php endforeach; ?>
+                    <?php if (!empty($shiftLogs)): 
+                    foreach ($shiftLogs as $log) {
+    // Check if 'route' key exists, if not, set a default value
+    $route = isset($log['route']) ? htmlspecialchars($log['route']) : 'Unknown Route';
+
+    echo '<li>';
+    echo '<img src="' . htmlspecialchars($log['driver_image']) . '" alt="Profile Icon" class="profile-icon">';
+    echo '<div class="log-details">';
+    echo '<div>Driver: ' . htmlspecialchars($log['driver_name']) . '</div>';
+    echo '<div>Date: ' . htmlspecialchars($log['formatted_date']) . '</div>';
+    echo '<div>';
+    if ($log['status'] === 'Time In') {
+        echo 'Shift date & Time: ' . htmlspecialchars($log['formatted_date']);
+    }
+    echo '</div>';
+    echo '<div>Bus #: ' . htmlspecialchars($log['bus_id']) . '</div>';
+    echo '<div>Route: ' . $route . '</div>';
+    echo '</div>';
+    echo '</li>';
+}
+          ?>              <?php endforeach; ?>
                     <?php else: ?>
                         <li>No shift logs available.</li>
                     <?php endif; ?>
