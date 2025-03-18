@@ -1,11 +1,6 @@
 <?php
     session_start();
-  
-    if (!isset($_SESSION['username'])) {
-        // Redirect to login page if not logged in
-        header("Location: Login.php");
-        exit();
-    }
+
     include 'role_check.php';
     $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : '';
 
@@ -121,11 +116,18 @@ $conn->close();
 </head>
 <body>
 <?php
+  
+    if (!isset($_SESSION['username'])) {
+        // Redirect to login page if not logged in
+        header("Location: Login.php");
+        exit();
+    }
 // Determine the current page
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <header>
- 
+ <?php
+
     // Assuming the user's role is stored in the session
    
     <div class="header-content">
