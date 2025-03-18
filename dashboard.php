@@ -1,6 +1,16 @@
 <?php
     session_start();
+  
+    if (!isset($_SESSION['username'])) {
+        // Redirect to login page if not logged in
+        header("Location: Login.php");
+        exit();
+    }
+    include 'role_check.php';
+    $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : '';
 
+    // Check if the user has the required role
+    checkUserRole(['SuperAdmin','MidAdmin','Admin']);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -115,19 +125,9 @@ $conn->close();
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <header>
-    <?php
-    if (!isset($_SESSION['username'])) {
-        // Redirect to login page if not logged in
-        header("Location: Login.php");
-        exit();
-    }
-    include 'role_check.php';
-
-    // Check if the user has the required role
-    checkUserRole(['SuperAdmin','MidAdmin','Admin']);
+ 
     // Assuming the user's role is stored in the session
-    $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : '';
-    ?>
+   
     <div class="header-content">
         <div class="username-display">
             <?php if (isset($_SESSION['username'])): ?>
