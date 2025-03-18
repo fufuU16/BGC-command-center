@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $logStmt->execute();
                 $logStmt->close();
 
-                header("Location: index.php");
+                header("Location: dashboard.php");
                 exit();
             } else {
                 // Record failed attempt
