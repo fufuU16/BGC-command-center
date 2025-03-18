@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -114,7 +116,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <header>
     <?php
-    session_start();
     if (!isset($_SESSION['username'])) {
         // Redirect to login page if not logged in
         header("Location: Login.php");
