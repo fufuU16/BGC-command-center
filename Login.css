@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('../image/bbbgg.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(42, 157, 143, 0.8); /* Semi-transparent background for readability */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    height: 80px;
+}
+
+.bgclogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bgclogo img {
+    width: 250px; /* Increased size for the logo */
+    height: auto;
+}
+
+.logo img {
+    width: 50px; /* Increased size for the logo */
+    margin-left: 20px;
+}
+
+nav {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #333333;
+    margin: 0 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 28px; /* Increased font size */
+    color: #00796b;
+}
+
+h1 span {
+    color: #ff5722;
+}
+
+form {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: #A0D9D9;
+    padding: 30px; /* Increased padding for more space */
+    border-radius: 20px;
+    width: 500px; /* Increased width for the form */
+    flex-direction: column;
+    gap: 15px; /* Increased gap between elements */
+    height: 500px; /* Increased height for the form */
+}
+
+label {
+    color: #333333;
+    font-weight: bold;
+    font-size: 18px; /* Increased font size for labels */
+}
+
+input {
+    padding: 15px; /* Increased padding for inputs */
+    border-radius: 20px;
+    border: 1px solid #F28C28;
+    font-size: 16px; /* Increased font size for inputs */
+}
+
+button {
+    background-color: #F28C28;
+    color: #333333;
+    border: none;
+    padding: 15px; /* Increased padding for button */
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px; /* Increased width for the button */
+    align-self: center;
+    font-size: 18px; /* Increased font size for button */
+    margin-top: auto;
+}
+
+.rwave {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.rwave img {
+    width: 500px;
+    height: auto;
+    margin-top: 80px;
+    margin-left: -5px;
+    max-width: 100%;
+}
+
+.wave {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.wave img {
+    width: 500px;
+    height: auto;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    max-width: 100%;
+}
+
+@media (max-width: 668px) {
+    .rwave img, .wave img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rwave img, .wave img {
+        width: 200px;
+    }
+}
+/* Add this CSS to your Login.css file or within a <style> tag in the HTML head */
+
+.message-box {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}.forgot-password {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}

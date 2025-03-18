@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: url('../image/bgbg.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background image follows the scroll */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+body::before {
+    content: '';
+    position: fixed; /* Fixed to ensure it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gray tone overlay */
+    z-index: -1; /* Places the overlay behind the content */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with content interaction */
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 1; /* Ensures header is above the overlay */
+}
+
+.logo img {
+    width: 40px;
+    margin-left: 20px;
+}
+nav {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav a, .dropbtn {
+    color: #ffffff;
+    margin: 0 30px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.211); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.059);
+    z-index: 1;
+    border-radius: 8px; /* Rounded corners to match card design */
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757; /* Slightly lighter shade for hover effect */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757; /* Matches hover effect for dropdown items */
+    border-radius: 8px; /* Consistent with dropdown content */
+}
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 4px 2px -2px gray; /* Add shadow effect for active link */
+    background-color: #575757; /* Background color for active link */
+    border-radius: 8px; /* Optional: rounded corners for active link */
+    padding: 10px; /* Optional: add padding for better appearance */
+}
+
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 4px 2px -2px gray; /* Add shadow effect for active link */
+}
+.Title {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.Title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+main {
+    margin: 30px auto;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+    text-align: left;
+    width: 100%;
+    display: block; /* Ensures the label takes up the full width */
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #2A9D8F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #21867a;
+}
+
+button.back-to-shiftlogs {
+    padding: 10px 20px;
+    background-color: #2A9D8F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Adds some space above the button */
+}
+
+button.back-to-shiftlogs:hover {
+    background-color: #21867a;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 800px; /* Adjusted max-width for a wider container */
+    width: 90%; /* Set width to 90% for more flexibility */
+    padding: 0 20px;
+    height: 600px;
+}
+
+.card {
+    background-color: #A0D9D9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    border: 3px solid #F28C28;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px; /* Adds a gap between the flex items */
+    height: 600px;
+    max-height: 100%;
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    margin-top: 40px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+.form-right .image-container {
+    width: 200px; /* Fixed width for the image container */
+    height: 200px; /* Fixed height for the image container */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px; /* Increased margin for consistent spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%; /* Ensures the input takes up the full width of the container */
+    box-sizing: border-box;
+}/* Add this to your passenger.css file */
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: to make the active link stand out more */
+    color: #ffffff; /* Optional: change the color of the active link */
+}.username-display {
+    position: absolute;
+    left: 20px;
+    font-weight: bold;
+    color: #ffffff;
+
+}.message {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 80%; /* Adjust width as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message.success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Green border */
+}
+
+.message.error {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Red border */
+}

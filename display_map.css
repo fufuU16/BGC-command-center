@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    background-image: url('../image/bgbg.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background image follows the scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed; /* Fixed to ensure it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gray tone overlay */
+    z-index: -1; /* Places the overlay behind the content */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with content interaction */
+}
+
+#map {
+    height: 600px;
+    width: 70%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+}
